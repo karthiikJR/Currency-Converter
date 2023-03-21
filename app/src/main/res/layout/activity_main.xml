@@ -10,9 +10,62 @@
         android:id="@+id/imageView2"
         android:layout_width="344dp"
         android:layout_height="197dp"
-        android:contentDescription="currency img"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/currency_img"
         android:scaleType="fitStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/currency"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="30dp" />
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/converts_indian_currency_to_selected_ones"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <EditText
+        android:id="@+id/eTCurr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="@string/enter_indian_currency"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.214"
+        tools:ignore="LabelFor"
+        android:autofillHints="" />
+
+    <Spinner
+        android:id="@+id/spinnerCurrList"
+        android:layout_width="125dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="102dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/currency"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <Button
+        android:id="@+id/btnConvert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="currClick"
+        android:text="@string/convert"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

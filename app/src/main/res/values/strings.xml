@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Currency Converter</string>
+    <string name="currency_img">currency img</string>
+    <string name="converts_indian_currency_to_selected_ones">Converts Indian currency to selected ones!</string>
+    <string name="enter_indian_currency">Enter Indian Currency</string>
+    <string name="currency">Currency</string>
+    <string name="convert">Convert</string>
+    <string-array name="CurrItems">
+        <item>Dollar</item>
+        <item>Pound</item>
+        <item>Yen</item>
+        <item>Euro</item>
+        <item>Riyal</item>
+    </string-array>
 </resources>
