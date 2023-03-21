@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -12,8 +13,12 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
 
+    double con;
+
     public void currClick(View view) {
 
+        EditText et = (EditText) findViewById(R.id.eTCurr);
+        int curr =Integer.parseInt(et.getText().toString());
 
     }
 
