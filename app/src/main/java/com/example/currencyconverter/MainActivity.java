@@ -3,22 +3,72 @@ package com.example.currencyconverter;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
 
+    /*
+     * usd - 0.012
+     * pound - 0.0099
+     * yen - 1.60
+     * euro - 0.011
+     * riyal - 0.045
+     */
+
+
     double con;
 
     public void currClick(View view) {
 
-        EditText et = (EditText) findViewById(R.id.eTCurr);
-        int curr =Integer.parseInt(et.getText().toString());
+        Spinner spinner = findViewById(R.id.spinnerCurrList);
+        String currType = spinner.getSelectedItem().toString();
+
+        try {
+            EditText et = findViewById(R.id.eTCurr);
+            int curr =Integer.parseInt(et.getText().toString());
+
+            switch (currType) {
+                case "Dollar" :
+                    con = curr*0.012;
+                    Toast.makeText(this, "₹"+ curr +" is $"+ con, Toast.LENGTH_LONG).show();
+                    break;
+                case "Pound" :
+                    con = curr*0.0099;
+                    Toast.makeText(this, "₹"+ curr +" is £"+ con, Toast.LENGTH_LONG).show();
+                    break;
+                case "Yen" :
+                    con = curr*1.60;
+                    Toast.makeText(this, "₹"+ curr +" is ¥"+ con, Toast.LENGTH_LONG).show();
+                    break;
+                case "Euro" :
+                    con = curr*0.011;
+                    Toast.makeText(this, "₹"+ curr +" is €"+ con, Toast.LENGTH_LONG).show();
+                    break;
+                case "Riyal" :
+                    con = curr*0.045;
+                    Toast.makeText(this, "₹"+ curr +" is SAR "+ con, Toast.LENGTH_LONG).show();
+                    break;
+                default:
+                    Toast.makeText(this, "Enter proper one", Toast.LENGTH_LONG).show();
+            }
+        }
+        catch (Exception e) {
+            Toast.makeText(this, "Enter valid number :)", Toast.LENGTH_LONG).show();
+        }
+
+
+
+        //Log.e("btn", String.valueOf(curr));
+        Log.e("currType", currType);
+
 
     }
 
